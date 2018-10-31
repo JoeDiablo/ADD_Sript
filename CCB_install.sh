@@ -3,16 +3,16 @@
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=6
-BACKTITLE="CCBC Masternode Setup Wizard"
-TITLE="CCBC VPS Setup"
+BACKTITLE="ADD Masternode Setup Wizard"
+TITLE="ADD VPS Setup"
 MENU="Choose one of the following options:"
 
 OPTIONS=(1 "Install New VPS Server"
          2 "Update to new version VPS Server"
-         3 "Start CCBC Masternode"
-	 4 "Stop CCBC Masternode"
-	 5 "CCBC Server Status"
-	 6 "Rebuild CCBC Masternode Index")
+         3 "Start ADD Masternode"
+	 4 "Stop ADD Masternode"
+	 5 "ADD Server Status"
+	 6 "Rebuild ADD Masternode Index")
 
 
 CHOICE=$(whiptail --clear\
@@ -71,7 +71,7 @@ echo VPS Server prerequisites installed.
 
 echo Configuring server firewall.
 sudo apt-get install -y ufw
-sudo ufw allow 5520 
+sudo ufw allow 2152 
 sudo ufw allow ssh/tcp
 sudo ufw limit ssh/tcp
 sudo ufw logging on
@@ -83,15 +83,15 @@ echo Downloading CCBC install files.
 wget https://github.com/CryptoCashBack-Hub/CCBC/releases/download/v1.0.0.5/CCBC-linux.tar.gz
 echo Download complete.
 
-echo Installing CCBC.
-tar -xvf CCBC-linux.tar.gz
-chmod 775 ./ccbcd
-chmod 775 ./ccbc-cli
-echo CCBC install complete. 
-sudo rm -rf CCBC-linux.tar.gz
+echo Installing ADD.
+tar -xvf ADD-linux.tar.gz
+chmod 775 ./addd
+chmod 775 ./add-cli
+echo ADD install complete. 
+sudo rm -rf ADD-linux.tar.gz
 clear
 
-echo Now ready to setup CCBC configuration file.
+echo Now ready to setup ADD configuration file.
 
 RPCUSER=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
 RPCPASSWORD=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
@@ -101,7 +101,7 @@ read GENKEY
 
 mkdir -p /root/.ccbc && touch /root/.ccbc/ccbc.conf
 
-cat << EOF > /root/.ccbc/ccbc.conf
+cat << EOF > /root/.add/add.conf
 rpcuser=$RPCUSER
 rpcpassword=$RPCPASSWORD
 rpcallowip=127.0.0.1
@@ -110,17 +110,9 @@ listen=1
 daemon=1
 staking=1
 rpcallowip=127.0.0.1
-rpcport=5521
-port=5520
+rpcport=12152
+port=2152
 prune=500
-addnode=144.202.16.251:5520
-addnode=104.238.159.161:5520
-addnode=178.128.116.146:5520
-addnode=95.179.199.170:5520
-addnode=158.69.143.106:5520
-addnode=95.216.145.35:5520
-addnode=45.32.123.247:5520
-addnode=seeder.ccbcoin.club
 logtimestamps=1
 maxconnections=256
 masternode=1
@@ -128,25 +120,25 @@ externalip=$EXTIP
 masternodeprivkey=$GENKEY
 EOF
 clear
-./ccbcd -daemon
-./ccbc-cli stop
-./ccbcd -daemon
+./addd -daemon
+./add-cli stop
+./addd -daemon
 clear
-echo CCBC configuration file created successfully. 
-echo CCBC Server Started Successfully using the command ./ccbcd -daemon
-echo If you get a message asking to rebuild the database, please hit Ctr + C and run ./ccbcd -daemon -reindex
+echo ADD configuration file created successfully. 
+echo ADD Server Started Successfully using the command ./addd -daemon
+echo If you get a message asking to rebuild the database, please hit Ctr + C and run ./addd -daemon -reindex
 echo If you still have further issues please reach out to support in our Discord channel. 
 echo Please use the following Private Key when setting up your wallet: $GENKEY
             ;;
 	    
     
         2)
-sudo ./ccbc-cli -daemon stop
-echo "! Stopping CCBC Daemon !"
+sudo ./add-cli -daemon stop
+echo "! Stopping ADD Daemon !"
 
 echo Configuring server firewall.
 sudo apt-get install -y ufw
-sudo ufw allow 5520
+sudo ufw allow 2152
 sudo ufw allow ssh/tcp
 sudo ufw limit ssh/tcp
 sudo ufw logging on
@@ -154,33 +146,33 @@ echo "y" | sudo ufw enable
 sudo ufw status
 echo Server firewall configuration completed.
 
-echo "! Removing Concierge !"
-sudo rm -rf CCBC-linux.tar.gz
+echo "! Removing ADD !"
+sudo rm -rf ADD-linux.tar.gz
 
 
 wget https://github.com/CryptoCashBack-Hub/CCBC/releases/download/v1.0.0.5/CCBC-linux.tar.gz
 echo Download complete.
 echo Installing CCBC.
-tar -xvf CCBC-linux.tar.gz
-chmod 775 ./ccbcd
-chmod 775 ./ccbc-cli
-sudo rm -rf CCBC-linux.tar.gz
-./ccbcd -daemon
-echo CCBC install complete. 
+tar -xvf ADD-linux.tar.gz
+chmod 775 ./addd
+chmod 775 ./add-cli
+sudo rm -rf ADD-linux.tar.gz
+./addd -daemon
+echo ADD install complete. 
 
 
             ;;
         3)
-            ./ccbcd -daemon
-		echo "If you get a message asking to rebuild the database, please hit Ctr + C and rebuild CCBC Index. (Option 6)"
+            ./addd -daemon
+		echo "If you get a message asking to rebuild the database, please hit Ctr + C and rebuild ADD Index. (Option 6)"
             ;;
 	4)
-            ./ccbc-cli stop
+            ./add-cli stop
             ;;
 	5)
-	    ./ccbc-cli getinfo
+	    ./add-cli getinfo
 	    ;;
         6)
-	     ./ccbcd -daemon -reindex
+	     ./addd -daemon -reindex
             ;;
 esac
