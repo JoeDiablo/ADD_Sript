@@ -80,7 +80,7 @@ sudo ufw status
 echo Server firewall configuration completed.
 
 echo Downloading CCBC install files.
-wget https://github.com/CryptoCashBack-Hub/CCBC/releases/download/v1.0.0.5/CCBC-linux.tar.gz
+wget https://github.com/AD-Node/AdNode/releases/download/v1.0.0.0/ADD-linux.tar.gz
 echo Download complete.
 
 echo Installing ADD.
@@ -99,7 +99,7 @@ EXTIP=`curl -s4 icanhazip.com`
 echo Please input your private key.
 read GENKEY
 
-mkdir -p /root/.ccbc && touch /root/.ccbc/ccbc.conf
+mkdir -p /root/.add && touch /root/.add/add.conf
 
 cat << EOF > /root/.add/add.conf
 rpcuser=$RPCUSER
@@ -150,7 +150,7 @@ echo "! Removing ADD !"
 sudo rm -rf ADD-linux.tar.gz
 
 
-wget https://github.com/CryptoCashBack-Hub/CCBC/releases/download/v1.0.0.5/CCBC-linux.tar.gz
+wget https://github.com/AD-Node/AdNode/releases/download/v1.0.0.0/ADD-linux.tar.gz
 echo Download complete.
 echo Installing CCBC.
 tar -xvf ADD-linux.tar.gz
