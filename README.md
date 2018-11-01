@@ -72,7 +72,7 @@ After the MN is up and running, you need to configure the desktop wallet accordi
 1. Open the ADD Desktop Wallet.  
 2. Go to RECEIVE and create a New Address: **MN1**  
 3. Send **1000** ADD to **MN1**. You need to send 1000 coins in one single transaction.
-4. Wait for 10 confirmations.  
+4. Wait for 15 confirmations.  
 5. Go to **Tools -> Click "Debug Console"** 
 6. Type the following command: **masternode outputs**  
 7. Go to  **Tools -> "Open Masternode Configuration File"**
@@ -83,7 +83,7 @@ Alias Address Privkey TxHash TxIndex
 ## SAMPLE OF HOW YOUR MASTERNODE.CONF SHOULD LOOK LIKE.  (This should all be on one line)  
 
 ```
-MN1 127.0.0.2:2152 93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c0
+MN1 127.0.0.2:2152 93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xirgX37tGBDQL8Xg 2bcd3c84c84f87eca86e4e56834c92927a07f9e18718810b92e0d0324456a67c0
 ```
 
 
