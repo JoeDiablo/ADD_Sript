@@ -1,4 +1,3 @@
-![logo]()
 
 # ADD v1.0.0.0 Masternode Setup Guide [ Ubuntu 16.04 ]
 
@@ -122,4 +121,4 @@ You want to see **"Masternode started successfully and Status 4"**
 ./add-cli masternode status
 ```
   
-Thank you too Franco#6184 for catching some errors! :)
+
