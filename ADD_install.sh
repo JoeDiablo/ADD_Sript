@@ -157,6 +157,7 @@ tar -xvf ADD-linux.tar.gz
 chmod 775 ./addd
 chmod 775 ./add-cli
 sudo rm -rf ADD-linux.tar.gz
+sleep 5
 ./addd -daemon
 echo ADD install complete. 
 
