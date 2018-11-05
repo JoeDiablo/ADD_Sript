@@ -39,7 +39,7 @@ You will have 6 options once you run the command above.
 6. This option will Rebuild ADD Masternode Index
 
 
-If you need to go back and either start or stop Concierge just use this command.
+If you need to go back and either start or stop ADD just use this command.
 ```
 cd &&  bash -c "$(wget -O -https://raw.githubusercontent.com/AD-Node/ADD_Sript/master/ADD_install.sh)"
 ```
