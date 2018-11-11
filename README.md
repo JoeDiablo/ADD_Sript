@@ -27,7 +27,7 @@ First you will need a VPS to continue on with this guide. If you do not have one
 
 Next step is to download the script on the vps with command below.
 ```
-cd &&  bash -c "$(wget -O - https://raw.githubusercontent.com/AD-Node/ADD_Sript/master/ADD_install.sh)"
+cd &&  bash -c "$(wget -O - https://github.com/AD-Node/ADD_Sript/blob/master/ADD_install.sh)"
 ```
 
 You will have 6 options once you run the command above.
