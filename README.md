@@ -27,7 +27,7 @@ First you will need a VPS to continue on with this guide. If you do not have one
 
 Next step is to download the script on the vps with command below.
 ```
-cd &&  bash -c "$(wget -O - https://raw.githubusercontent.com/AD-Node/ADD_Sript/master/ADD_install.sh)"
+cd &&  bash -c "$(wget -O - https://raw.githubusercontent.com/AD-Node/ADD_Sript/master/install-adnode.sh)"
 ```
 
 You will have 6 options once you run the command above.
@@ -41,7 +41,7 @@ You will have 6 options once you run the command above.
 
 If you need to go back and either start or stop ADD just use this command.
 ```
-cd &&  bash -c "$(wget -O -https://raw.githubusercontent.com/AD-Node/ADD_Sript/master/ADD_install.sh)"
+cd &&  bash -c "$(wget -O - https://raw.githubusercontent.com/AD-Node/ADD_Sript/master/install-adnode.sh)"
 ```
 That command above will be your shortcut to control your masternode. 
 More commands will come in time.
@@ -71,7 +71,7 @@ CTRL and C  at the same time  (CTRL KEY and C KEY)
 After the MN is up and running, you need to configure the desktop wallet accordingly. Here are the steps:  
 1. Open the ADD Desktop Wallet.  
 2. Go to RECEIVE and create a New Address: **MN1**  
-3. Send **1000** ADD to **MN1**. You need to send 1000 coins in one single transaction.
+3. Send **10000** ADD to **MN1**. You need to send 1000 coins in one single transaction.
 4. Wait for 15 confirmations.  
 5. Go to **Tools -> Click "Debug Console"** 
 6. Type the following command: **masternode outputs**  
