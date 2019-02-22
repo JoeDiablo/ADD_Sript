@@ -27,7 +27,12 @@ First you will need a VPS to continue on with this guide. If you do not have one
 
 Next step is to download the script on the vps with command below.
 ```
-cd &&  bash -c "$(wget -O - https://raw.githubusercontent.com/AD-Node/ADD_Sript/master/install-adnode.sh)"
+wget https://raw.githubusercontent.com/JoeDiablo/ADD_Sript/master/ADD_install.sh
+
+Next command is:
+
+bash ADD_install.sh
+
 ```
 
 You will have 6 options once you run the command above.
@@ -41,7 +46,7 @@ You will have 6 options once you run the command above.
 
 If you need to go back and either start or stop ADD just use this command.
 ```
-cd &&  bash -c "$(wget -O - https://raw.githubusercontent.com/AD-Node/ADD_Sript/master/install-adnode.sh)"
+wget https://raw.githubusercontent.com/JoeDiablo/ADD_Sript/master/ADD_install.sh
 ```
 That command above will be your shortcut to control your masternode. 
 More commands will come in time.
